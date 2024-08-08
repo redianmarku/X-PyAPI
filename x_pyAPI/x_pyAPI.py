@@ -1,6 +1,4 @@
 from requests_oauthlib import OAuth1Session
-import os
-import json
 
 class X_API:
     def __init__(self, consumer_key, consumer_secret):
@@ -32,7 +30,7 @@ class X_API:
         # Get access token
         access_token_url = "https://api.twitter.com/oauth/access_token"
         self.oauth = self._create_oauth_session(resource_owner_key, resource_owner_secret)
-        oauth_tokens = self.oauth.fetch_access_token(access_token_url)
+        oauth_tokens = self.oauth.fetch_access_token(access_token_url, verifier=verifier)
         self.access_token = oauth_tokens["oauth_token"]
         self.access_token_secret = oauth_tokens["oauth_token_secret"]
         self.oauth = self._create_oauth_session(self.access_token, self.access_token_secret)
