@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="X-pyAPI",
-    version="0.4",
+    version="1.1",
     description="A simple Python library for posting tweets on X.com using new X API v2.",
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',

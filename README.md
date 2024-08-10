@@ -26,6 +26,9 @@ def main():
     # Authorize (only needed once)
     twitter_api.authorize()
 
+    # Authorize (only needed once)
+    user = twitter_api.get_user_info()
+
     # Post a tweet
     tweet_text = "Hello world!"
     twitter_api.post_tweet(tweet_text)
